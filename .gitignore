@@ -1,0 +1,50 @@
+# ---- Data (never committed: see data/README.md) ----
+data/*.csv
+data/*.zip
+data/*.parquet
+!data/README.md
+!data/.gitkeep
+
+# ---- Model artefacts & streaming state ----
+models/
+streamoutput/
+checkpoints/
+*.crc
+_SPARK_METADATA/
+
+# ---- Spark ----
+spark-warehouse/
+metastore_db/
+derby.log
+*.log
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Local tooling, never published ----
+# Personal helper scripts for setting up and pushing this repo. They are
+# workflow notes for one machine, not part of the project.
+PUSH.md
+push.sh
+set-author.sh
+build_history.sh
+scripts/
+
+# ---- OS / editor ----
+.DS_Store
+__MACOSX/
+.idea/
+.vscode/
