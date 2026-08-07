@@ -1,0 +1,277 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1010" width="1400" height="1010" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3f4855"/>
+    </marker>
+    <marker id="arG" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2e7d46"/>
+    </marker>
+
+    <!-- ============ ICON SYMBOLS (original glyphs) ============ -->
+
+    <symbol id="ico-engine" viewBox="0 0 48 48">
+      <path d="M24 3 L29.5 17.5 L44 12 L33.5 24 L44 36 L29.5 30.5 L24 45 L18.5 30.5 L4 36 L14.5 24 L4 12 L18.5 17.5 Z"
+            fill="#e8763a" stroke="#c25a24" stroke-width="1.4" stroke-linejoin="round"/>
+      <circle cx="24" cy="24" r="5.5" fill="#fff" stroke="#c25a24" stroke-width="1.4"/>
+    </symbol>
+
+    <symbol id="ico-broker" viewBox="0 0 48 48">
+      <line x1="13" y1="12" x2="33" y2="24" stroke="#2f3d52" stroke-width="2.6"/>
+      <line x1="13" y1="36" x2="33" y2="24" stroke="#2f3d52" stroke-width="2.6"/>
+      <line x1="13" y1="12" x2="13" y2="36" stroke="#2f3d52" stroke-width="2.6"/>
+      <circle cx="13" cy="12" r="6.5" fill="#41576f" stroke="#2f3d52" stroke-width="2"/>
+      <circle cx="13" cy="36" r="6.5" fill="#41576f" stroke="#2f3d52" stroke-width="2"/>
+      <circle cx="34" cy="24" r="7.5" fill="#5b7392" stroke="#2f3d52" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="ico-model" viewBox="0 0 48 48">
+      <line x1="12" y1="14" x2="26" y2="10" stroke="#1f5c32" stroke-width="1.8"/>
+      <line x1="12" y1="14" x2="26" y2="24" stroke="#1f5c32" stroke-width="1.8"/>
+      <line x1="12" y1="34" x2="26" y2="24" stroke="#1f5c32" stroke-width="1.8"/>
+      <line x1="12" y1="34" x2="26" y2="38" stroke="#1f5c32" stroke-width="1.8"/>
+      <line x1="26" y1="10" x2="38" y2="24" stroke="#1f5c32" stroke-width="1.8"/>
+      <line x1="26" y1="24" x2="38" y2="24" stroke="#1f5c32" stroke-width="1.8"/>
+      <line x1="26" y1="38" x2="38" y2="24" stroke="#1f5c32" stroke-width="1.8"/>
+      <circle cx="12" cy="14" r="4.2" fill="#ffffff" stroke="#1f5c32" stroke-width="1.6"/>
+      <circle cx="12" cy="34" r="4.2" fill="#ffffff" stroke="#1f5c32" stroke-width="1.6"/>
+      <circle cx="26" cy="10" r="4.2" fill="#ffffff" stroke="#1f5c32" stroke-width="1.6"/>
+      <circle cx="26" cy="24" r="4.2" fill="#ffffff" stroke="#1f5c32" stroke-width="1.6"/>
+      <circle cx="26" cy="38" r="4.2" fill="#ffffff" stroke="#1f5c32" stroke-width="1.6"/>
+      <circle cx="38" cy="24" r="4.8" fill="#1f5c32" stroke="#1f5c32" stroke-width="1.6"/>
+    </symbol>
+
+    <symbol id="ico-chart" viewBox="0 0 48 48">
+      <rect x="5" y="7" width="38" height="34" rx="3" fill="#fff" stroke="#5b7392" stroke-width="2"/>
+      <rect x="11" y="24" width="5.5" height="11" fill="#8fb3d9"/>
+      <rect x="20" y="17" width="5.5" height="18" fill="#5b87c9"/>
+      <rect x="29" y="21" width="5.5" height="14" fill="#8fb3d9"/>
+      <circle cx="33" cy="16" r="8" fill="none" stroke="#c25a24" stroke-width="2.6"/>
+      <line x1="39" y1="22" x2="44" y2="28" stroke="#c25a24" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ico-dash" viewBox="0 0 48 48">
+      <rect x="4" y="8" width="40" height="30" rx="3" fill="#fff" stroke="#5b7392" stroke-width="2"/>
+      <polyline points="9,31 17,21 24,26 33,13 40,18" fill="none" stroke="#c25a24" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="17" cy="21" r="2.4" fill="#c25a24"/>
+      <circle cx="33" cy="13" r="2.4" fill="#c25a24"/>
+      <line x1="18" y1="38" x2="30" y2="38" stroke="#5b7392" stroke-width="2.6"/>
+      <line x1="24" y1="38" x2="24" y2="43" stroke="#5b7392" stroke-width="2.6"/>
+    </symbol>
+
+    <style>
+      .laneA   { fill:#eef7ef; stroke:#a9cfb1; stroke-width:1.6; }
+      .laneB   { fill:#f3f0fa; stroke:#c2b6df; stroke-width:1.6; }
+      .lbarA   { fill:#7fbb8e; }
+      .lbarB   { fill:#a695d0; }
+      .lbtxt   { font-size:15px; font-weight:700; fill:#fff; letter-spacing:2.4px; }
+      .grp     { fill:#ffffff; stroke:#8b95a5; stroke-width:1.6; rx:6; }
+      .box     { fill:#ffffff; stroke:#7b8797; stroke-width:1.6; rx:6; }
+      .cap     { fill:#f4f6f9; stroke:#7b8797; stroke-width:1.6; rx:24; }
+      .capG    { fill:#eef8f1; stroke:#4fa96f; stroke-width:1.9; rx:24; }
+      .cyl     { fill:#fffaf0; stroke:#cf9b3c; stroke-width:1.7; }
+      .cylG    { fill:#8fd7a6; stroke:#2e7d46; stroke-width:2; }
+      .cylB    { fill:#dceaf9; stroke:#5b87c9; stroke-width:1.7; }
+      .ell     { fill:#ffffff; stroke:#7b8797; stroke-width:1.6; }
+      .chev    { fill:#ffffff; stroke:#7b8797; stroke-width:1.5; }
+      .hex     { fill:#fff4ec; stroke:#d98757; stroke-width:1.8; }
+      .h1      { font-size:14px; font-weight:700; fill:#16202e; }
+      .h2      { font-size:12.5px; font-weight:700; fill:#16202e; }
+      .tx      { font-size:11px; fill:#5b6472; }
+      .txs     { font-size:10px; fill:#77808f; }
+      .cap2    { font-size:12px; font-weight:700; fill:#3f4855; }
+      .fl      { stroke:#3f4855; stroke-width:1.7; fill:none; marker-end:url(#ar); }
+      .flG     { stroke:#2e7d46; stroke-width:2.4; fill:none; marker-end:url(#arG); stroke-dasharray:7 4; }
+      .title   { font-size:21px; font-weight:700; fill:#111827; }
+      .sub     { font-size:12.5px; fill:#5b6472; }
+      .mono    { font-size:10.5px; fill:#41576f; font-family:'SF Mono',Consolas,monospace; }
+    </style>
+  </defs>
+
+  <text x="24" y="30" class="title">GridSmart: Building Energy Forecasting Platform</text>
+  <text x="24" y="51" class="sub">Stage 1 trains and persists a Spark ML pipeline · Stage 2 loads that same artefact to score a live Kafka feed</text>
+
+  <!-- ================= STAGE 1 ================= -->
+  <rect x="24" y="68" width="1352" height="430" class="laneA" rx="8"/>
+  <rect x="24" y="68" width="40" height="430" class="lbarA" rx="8"/>
+  <rect x="52" y="68" width="12" height="430" class="lbarA"/>
+  <text class="lbtxt" transform="translate(50,372) rotate(-90)">STAGE 1 · TRAINING</text>
+
+  <rect x="86" y="98" width="196" height="256" class="grp"/>
+  <text x="184" y="122" class="h1" text-anchor="middle">Dataset</text>
+  <line x1="86" y1="132" x2="282" y2="132" stroke="#8b95a5" stroke-width="1.3"/>
+  <ellipse cx="152" cy="172" rx="56" ry="26" class="ell"/>
+  <text x="152" y="171" class="h2" text-anchor="middle">weather</text>
+  <text x="152" y="185" class="txs" text-anchor="middle">16 sites · hourly</text>
+  <ellipse cx="216" cy="240" rx="56" ry="26" class="ell"/>
+  <text x="216" y="239" class="h2" text-anchor="middle">meters</text>
+  <text x="216" y="253" class="txs" text-anchor="middle">~19M readings</text>
+  <ellipse cx="152" cy="308" rx="56" ry="26" class="ell"/>
+  <text x="152" y="307" class="h2" text-anchor="middle">building</text>
+  <text x="152" y="321" class="txs" text-anchor="middle">static metadata</text>
+
+  <rect x="330" y="196" width="128" height="88" class="box"/>
+  <use href="#ico-engine" x="378" y="204" width="32" height="32"/>
+  <text x="394" y="252" class="h2" text-anchor="middle">Apache Spark</text>
+  <text x="394" y="267" class="tx" text-anchor="middle">typed ingest</text>
+  <text x="394" y="279" class="txs" text-anchor="middle">32 MB partitions</text>
+
+  <rect x="506" y="96" width="182" height="82" class="box"/>
+  <use href="#ico-chart" x="516" y="106" width="28" height="28"/>
+  <text x="552" y="120" class="h2">Explore &amp; select</text>
+  <text x="552" y="134" class="h2">features</text>
+  <text x="518" y="156" class="tx">6-hour label · imputation</text>
+  <text x="518" y="169" class="tx">per-site peak season</text>
+
+  <rect x="506" y="200" width="152" height="46" class="box"/>
+  <text x="582" y="219" class="h2" text-anchor="middle">Training Data</text>
+  <text x="582" y="235" class="txs" text-anchor="middle">80% · seed=2025</text>
+
+  <rect x="506" y="262" width="152" height="46" class="box"/>
+  <text x="582" y="281" class="h2" text-anchor="middle">Test Data</text>
+  <text x="582" y="297" class="txs" text-anchor="middle">20% · held out</text>
+
+  <rect x="736" y="92" width="472" height="94" class="cap"/>
+  <text x="752" y="112" class="h2">ML Pipeline Model 1: Random Forest</text>
+  <path d="M752 124 h178 l16 22 l-16 22 h-178 l16 -22 z" class="chev"/>
+  <text x="849" y="142" class="tx" text-anchor="middle">Feature Transformation</text>
+  <text x="856" y="156" class="txs" text-anchor="middle">impute · index · OHE · assemble</text>
+  <path d="M958 124 h76 l16 22 l-16 22 h-76 l16 -22 z" class="chev"/>
+  <text x="1004" y="150" class="tx" text-anchor="middle">Training</text>
+  <ellipse cx="1128" cy="130" rx="44" ry="10" class="cyl"/>
+  <path d="M1084 130 v32 a44 10 0 0 0 88 0 v-32" class="cyl"/>
+  <text x="1128" y="154" class="h2" text-anchor="middle">RF Model</text>
+
+  <rect x="736" y="200" width="472" height="102" class="cap"/>
+  <text x="752" y="220" class="h2">ML Pipeline Model 2: Gradient-Boosted Trees</text>
+  <path d="M752 228 h178 l16 22 l-16 22 h-178 l16 -22 z" class="chev"/>
+  <text x="849" y="246" class="tx" text-anchor="middle">Feature Transformation</text>
+  <text x="856" y="260" class="txs" text-anchor="middle">impute · index · OHE · assemble</text>
+  <path d="M958 228 h76 l16 22 l-16 22 h-76 l16 -22 z" class="chev"/>
+  <text x="1004" y="254" class="tx" text-anchor="middle">Training</text>
+  <ellipse cx="1128" cy="234" rx="44" ry="10" class="cyl"/>
+  <path d="M1084 234 v32 a44 10 0 0 0 88 0 v-32" class="cyl"/>
+  <text x="1128" y="258" class="h2" text-anchor="middle">GBT Model</text>
+  <text x="752" y="292" class="txs">Identical feature stages. Any gap is the model, not preprocessing.</text>
+
+  <rect x="1004" y="330" width="204" height="62" class="box"/>
+  <text x="1018" y="351" class="h2">Hyper-parameter tuning</text>
+  <text x="1018" y="367" class="tx">ParamGrid · CrossValidator</text>
+  <text x="1018" y="381" class="txs">ships only if it beats baseline</text>
+
+  <path d="M712 356 l22 -28 h198 l22 28 l-22 28 h-198 z" class="hex"/>
+  <text x="833" y="350" class="h2" text-anchor="middle">Evaluation Metrics</text>
+  <text x="833" y="366" class="tx" text-anchor="middle">RMSLE (primary) · RMSE · MAE · R²</text>
+  <text x="833" y="379" class="txs" text-anchor="middle">paired Wilcoxon signed-rank test</text>
+
+  <text x="404" y="384" class="cap2" text-anchor="middle">Evaluate &amp; persist</text>
+  <text x="404" y="400" class="cap2" text-anchor="middle">the winning pipeline</text>
+
+  <ellipse cx="404" cy="448" rx="66" ry="13" class="cylG"/>
+  <path d="M338 448 v44 a66 13 0 0 0 132 0 v-44" class="cylG"/>
+  <use href="#ico-model" x="386" y="450" width="36" height="36"/>
+  <text x="404" y="518" class="h1" text-anchor="middle">PipelineModel</text>
+  <text x="404" y="534" class="txs" text-anchor="middle">all fitted state: medians, vocabularies, ensemble</text>
+
+  <path class="fl" d="M282 172 H 306 V 232 H 326"/>
+  <path class="fl" d="M282 240 H 326"/>
+  <path class="fl" d="M282 308 H 306 V 248 H 326"/>
+  <path class="fl" d="M458 220 H 482 V 137 H 502"/>
+  <path class="fl" d="M458 240 H 482 V 223 H 502"/>
+  <path class="fl" d="M458 258 H 482 V 285 H 502"/>
+  <path class="fl" d="M688 137 H 710 V 139 H 732"/>
+  <path class="fl" d="M658 223 H 710 V 247 H 732"/>
+  <path class="fl" d="M1208 139 H 1252 V 316 H 1106 V 326"/>
+  <path class="fl" d="M1208 251 H 1232 V 322 H 1106 V 326"/>
+  <path class="fl" d="M1004 361 H 960"/>
+  <path class="fl" d="M658 285 H 682 V 356 H 708"/>
+  <path class="fl" d="M712 356 H 470 V 426 H 412"/>
+
+  <!-- ================= STAGE 2 ================= -->
+  <rect x="24" y="546" width="1352" height="444" class="laneB" rx="8"/>
+  <rect x="24" y="546" width="40" height="444" class="lbarB" rx="8"/>
+  <rect x="52" y="546" width="12" height="444" class="lbarB"/>
+  <text class="lbtxt" transform="translate(50,846) rotate(-90)">STAGE 2 · INFERENCE</text>
+
+  <rect x="86" y="578" width="182" height="116" class="grp"/>
+  <text x="177" y="602" class="h1" text-anchor="middle">Streaming Data</text>
+  <line x1="86" y1="612" x2="268" y2="612" stroke="#8b95a5" stroke-width="1.3"/>
+  <ellipse cx="177" cy="652" rx="58" ry="26" class="ell"/>
+  <text x="177" y="651" class="h2" text-anchor="middle">weather</text>
+  <text x="177" y="665" class="txs" text-anchor="middle">replayed hourly feed</text>
+
+  <rect x="86" y="790" width="182" height="100" class="grp"/>
+  <text x="177" y="814" class="h1" text-anchor="middle">Static Data</text>
+  <line x1="86" y1="824" x2="268" y2="824" stroke="#8b95a5" stroke-width="1.3"/>
+  <text x="177" y="852" class="h2" text-anchor="middle">building</text>
+  <text x="177" y="870" class="txs" text-anchor="middle">~1,400 rows · broadcast join</text>
+
+  <rect x="300" y="612" width="112" height="82" class="box"/>
+  <use href="#ico-broker" x="340" y="620" width="32" height="32"/>
+  <text x="356" y="669" class="h2" text-anchor="middle">Producer</text>
+  <text x="356" y="684" class="txs" text-anchor="middle">120 rec / 5 s</text>
+
+  <rect x="452" y="612" width="140" height="82" class="box"/>
+  <use href="#ico-broker" x="506" y="620" width="32" height="32"/>
+  <text x="522" y="669" class="h2" text-anchor="middle">Apache Kafka</text>
+  <text x="522" y="685" class="mono" text-anchor="middle">weather5s</text>
+
+  <rect x="440" y="782" width="164" height="104" class="box"/>
+  <use href="#ico-engine" x="507" y="790" width="30" height="30"/>
+  <text x="522" y="838" class="h2" text-anchor="middle">Spark Streaming</text>
+  <text x="522" y="854" class="tx" text-anchor="middle">watermark 5 s</text>
+  <text x="522" y="868" class="txs" text-anchor="middle">on producer event time</text>
+
+  <rect x="660" y="596" width="436" height="112" class="capG"/>
+  <text x="678" y="620" class="h2">ML Pipeline Model: loaded, never re-fitted</text>
+  <path d="M678 632 h164 l16 26 l-16 26 h-164 l16 -26 z" class="chev"/>
+  <text x="768" y="654" class="tx" text-anchor="middle">Feature Transformation</text>
+  <text x="768" y="668" class="txs" text-anchor="middle">same module as Stage 1</text>
+  <ellipse cx="1000" cy="636" rx="52" ry="11" class="cylG"/>
+  <path d="M948 636 v34 a52 11 0 0 0 104 0 v-34" class="cylG"/>
+  <text x="1000" y="663" class="h2" text-anchor="middle">ML Model</text>
+
+  <ellipse cx="1222" cy="616" rx="56" ry="12" class="cyl"/>
+  <path d="M1166 616 v42 a56 12 0 0 0 112 0 v-42" class="cyl"/>
+  <text x="1222" y="648" class="h2" text-anchor="middle">Predicted</text>
+  <text x="1222" y="664" class="h2" text-anchor="middle">Data</text>
+  <text x="1222" y="694" class="txs" text-anchor="middle">6a · 6b · 6c aggregations</text>
+
+  <ellipse cx="742" cy="898" rx="66" ry="13" class="cylB"/>
+  <path d="M676 898 v40 a66 13 0 0 0 132 0 v-40" class="cylB"/>
+  <text x="742" y="928" class="h2" text-anchor="middle">Parquet</text>
+  <text x="742" y="944" class="txs" text-anchor="middle">durable · replayable</text>
+
+  <rect x="880" y="814" width="196" height="98" class="box"/>
+  <use href="#ico-broker" x="888" y="824" width="26" height="26"/>
+  <text x="924" y="842" class="h2">Kafka topics</text>
+  <text x="894" y="866" class="mono">predictions_stream</text>
+  <text x="894" y="884" class="mono">sixhour_totals_stream</text>
+  <text x="894" y="902" class="mono">daily_totals_stream</text>
+
+  <rect x="1124" y="818" width="108" height="86" class="box"/>
+  <use href="#ico-broker" x="1162" y="828" width="32" height="32"/>
+  <text x="1178" y="878" class="h2" text-anchor="middle">Consumer</text>
+  <text x="1178" y="893" class="txs" text-anchor="middle">dashboard</text>
+
+  <rect x="1264" y="818" width="98" height="86" class="box"/>
+  <use href="#ico-dash" x="1297" y="828" width="32" height="32"/>
+  <text x="1313" y="878" class="h2" text-anchor="middle">Operator</text>
+  <text x="1313" y="893" class="txs" text-anchor="middle">view</text>
+
+  <path class="flG" d="M470 470 H 620 V 578 H 858 V 592"/>
+  <text x="636" y="462" class="cap2" fill="#2e7d46">Deploy: the same fitted artefact, no re-fitting</text>
+
+  <path class="fl" d="M268 652 H 296"/>
+  <path class="fl" d="M412 653 H 448"/>
+  <path class="fl" d="M522 694 V 778"/>
+  <path class="fl" d="M268 840 H 436"/>
+  <path class="fl" d="M604 820 H 632 V 662 H 656"/>
+  <path class="fl" d="M1096 652 H 1162"/>
+  <path class="fl" d="M1222 706 V 744 H 742 V 870"/>
+  <path class="fl" d="M808 910 H 876"/>
+  <path class="fl" d="M1076 863 H 1120"/>
+  <path class="fl" d="M1232 861 H 1260"/>
+
+  <text x="86" y="978" class="txs">Parquet is tailed as a second streaming read before republishing to Kafka, so a slow dashboard can never apply back-pressure to the scoring job.</text>
+</svg>

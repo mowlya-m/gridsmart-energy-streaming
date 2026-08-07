@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 520" width="1060" height="520" font-family="'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5b6472"/>
+    </marker>
+    <style>
+      .title { font-size:18px; font-weight:700; fill:#111827; }
+      .sub   { font-size:12px; fill:#5b6472; }
+      .lbl   { font-size:12px; font-weight:700; fill:#374151; }
+      .s     { font-size:11px; fill:#5b6472; }
+      .axis  { stroke:#9aa3b0; stroke-width:1.4; marker-end:url(#a); }
+      .tick  { stroke:#c3cad4; stroke-width:1; }
+      .day   { fill:#e8f0fb; stroke:#5b87c9; stroke-width:1.3; rx:4; }
+      .trig  { fill:#fdeee7; stroke:#d98757; stroke-width:1.3; rx:4; }
+      .wm    { fill:#fff1f0; stroke:#d05353; stroke-width:1.4; rx:4; }
+      .late  { fill:#f3f4f6; stroke:#9aa3b0; stroke-width:1.2; stroke-dasharray:4 3; rx:4; }
+      .note  { font-size:10.5px; fill:#8a94a3; font-style:italic; }
+      .mono  { font-size:11px; fill:#374151; font-family:'SF Mono',Consolas,monospace; }
+    </style>
+  </defs>
+
+  <text x="24" y="30" class="title">Event time vs processing time: why the watermark is 5 seconds</text>
+  <text x="24" y="50" class="sub">One producer tick compresses five days of weather into five seconds of wall clock, so event time advances 86,400× faster than real time.</text>
+
+  <!-- Producer tick -->
+  <text x="24" y="92" class="lbl">PRODUCER: one tick, 120 records</text>
+  <line x1="24" y1="150" x2="1020" y2="150" class="axis"/>
+  <g>
+    <rect x="30" y="108" width="180" height="34" class="day"/>
+    <text x="42" y="129" class="mono">Day 1 · rows 1-24</text>
+    <rect x="216" y="108" width="180" height="34" class="day"/>
+    <text x="228" y="129" class="mono">Day 2 · rows 25-48</text>
+    <rect x="402" y="108" width="180" height="34" class="day"/>
+    <text x="414" y="129" class="mono">Day 3 · rows 49-72</text>
+    <rect x="588" y="108" width="180" height="34" class="day"/>
+    <text x="600" y="129" class="mono">Day 4 · rows 73-96</text>
+    <rect x="774" y="108" width="180" height="34" class="day"/>
+    <text x="786" y="129" class="mono">Day 5 · rows 97-120</text>
+  </g>
+  <g class="s">
+    <line x1="120" y1="150" x2="120" y2="158" class="tick"/><text x="86" y="172">weather_ts = t</text>
+    <line x1="306" y1="150" x2="306" y2="158" class="tick"/><text x="274" y="172">t + 1</text>
+    <line x1="492" y1="150" x2="492" y2="158" class="tick"/><text x="460" y="172">t + 2</text>
+    <line x1="678" y1="150" x2="678" y2="158" class="tick"/><text x="646" y="172">t + 3</text>
+    <line x1="864" y1="150" x2="864" y2="158" class="tick"/><text x="832" y="172">t + 4</text>
+  </g>
+  <text x="24" y="196" class="note">Each 24-row day block is stamped one second apart. Five days therefore span exactly the five seconds the tick occupies.</text>
+
+  <!-- Watermark -->
+  <text x="24" y="240" class="lbl">WATERMARK: 5 s on event time</text>
+  <rect x="30" y="254" width="500" height="52" class="wm"/>
+  <text x="44" y="276" class="mono">.withWatermark("event_time", "5 seconds")</text>
+  <text x="44" y="294" class="s">Spark keeps window state open for 5 s of event time past the max seen.</text>
+
+  <rect x="556" y="254" width="200" height="52" class="late"/>
+  <text x="570" y="276" class="lbl">arrives ≤ 5 s late</text>
+  <text x="570" y="294" class="s">accepted, window updated</text>
+
+  <rect x="772" y="254" width="200" height="52" class="late"/>
+  <text x="786" y="276" class="lbl">arrives &gt; 5 s late</text>
+  <text x="786" y="294" class="s">dropped, state released</text>
+
+  <text x="24" y="330" class="note">Pinned to the producer's tick interval on purpose: any longer and state grows without bound; any shorter and in-order records get dropped.</text>
+
+  <!-- Triggers -->
+  <text x="24" y="374" class="lbl">OUTPUT TRIGGERS: three cadences off one scored stream</text>
+  <line x1="24" y1="472" x2="1020" y2="472" class="axis"/>
+
+  <rect x="30" y="392" width="150" height="30" class="trig"/>
+  <text x="42" y="412" class="s">6a · every 5 s</text>
+  <rect x="216" y="392" width="150" height="30" class="trig"/>
+  <text x="228" y="412" class="s">6a · every 5 s</text>
+  <rect x="402" y="392" width="150" height="30" class="trig"/>
+  <text x="414" y="412" class="s">6a · every 5 s</text>
+  <rect x="588" y="392" width="150" height="30" class="trig"/>
+  <text x="600" y="412" class="s">6a · every 5 s</text>
+  <rect x="774" y="392" width="150" height="30" class="trig"/>
+  <text x="786" y="412" class="s">6a · every 5 s</text>
+  <rect x="30" y="426" width="168" height="30" class="trig"/>
+  <text x="42" y="446" class="s">6b · every 7 s</text>
+  <rect x="290" y="426" width="168" height="30" class="trig"/>
+  <text x="302" y="446" class="s">6b · every 7 s</text>
+  <rect x="550" y="426" width="168" height="30" class="trig"/>
+  <text x="562" y="446" class="s">6b · every 7 s</text>
+  <rect x="810" y="426" width="168" height="30" class="trig"/>
+  <text x="822" y="446" class="s">6b · every 7 s</text>
+  <g class="s">
+    <line x1="120" y1="472" x2="120" y2="480" class="tick"/><text x="112" y="494">0s</text>
+    <line x1="306" y1="472" x2="306" y2="480" class="tick"/><text x="296" y="494">5s</text>
+    <line x1="492" y1="472" x2="492" y2="480" class="tick"/><text x="480" y="494">10s</text>
+    <line x1="678" y1="472" x2="678" y2="480" class="tick"/><text x="666" y="494">15s</text>
+    <line x1="864" y1="472" x2="864" y2="480" class="tick"/><text x="852" y="494">20s</text>
+  </g>
+
+  <text x="24" y="516" class="note">6c (daily totals per site) fires every 14 s. Distinct trigger intervals let each aggregation accumulate enough windows to be meaningful without over-printing.</text>
+</svg>
